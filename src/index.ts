@@ -1,3 +1,3 @@
-import {generate} from './line_drawing/naive';
+import {generate} from './line_drawing/naive/naive';
 
 generate();
