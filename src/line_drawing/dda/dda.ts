@@ -10,16 +10,18 @@ const MAX_COLOR: number = 255;
 let DrawScript = `${FORMAT}\n${WIDTH} ${HEIGHT}\n${MAX_COLOR}\n`;
 
 function draw(slope: number, intercept: number) {
+	let expectedX = 0;
 	let expectedY = 0;
 	let actualY;
 	for(let y = 0; y < HEIGHT; y++) {
 		for(let x = 0; x < WIDTH; x++) {
-			if(y === Math.round(expectedY)) {
+			if(x === expectedX && y === Math.round(expectedY)) {
 				DrawScript += `0 0 0\n`;
 			} else {
 				DrawScript += `255 255 255\n`;
 			}
 		}
+		expectedX += 1;
 		expectedY += slope;
 	}
 	return DrawScript;
