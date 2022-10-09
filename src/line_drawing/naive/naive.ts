@@ -1,3 +1,5 @@
+// Naive Line Drawing Algorithm. 
+
 import fs from 'fs';
 
 const FORMAT: string = "P3";
